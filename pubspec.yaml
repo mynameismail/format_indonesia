@@ -1,6 +1,6 @@
 name: format_indonesia
 version: 0.1.0
-description: Format indonesia
+description: Library for Indonesian formatting
 dependencies:
   intl: ^0.16.1
 dev_dependencies:
