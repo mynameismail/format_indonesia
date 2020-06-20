@@ -2,7 +2,10 @@
 [DateFormat]: https://pub.dev/documentation/intl/latest/intl/DateFormat-class.html
 
 # Indonesian Formatter for Dart
-This is a library for Indonesian formatting. In this version provides [DateTime][] formatting (translation to Indonesian for weekday names, month names, and quarter names), inspired by [DateFormat][].
+This is a library for Indonesian formatting, provides [DateTime][] and number formatting.
+
+# Waktu class
+Translate to Indonesian for weekday names, month names, and quarter names, inspired by [DateFormat][].
 
 ## Example
 ```dart
@@ -59,6 +62,19 @@ void main() {
 }
 ```
 Supported patterns is referenced to [DateFormat].
+
+# Numerik class
+In this version, provides number to text convertion.
+
+## Example
+```dart
+import 'package:format_indonesia/format_indonesia.dart';
+
+void main() {
+  var numerik = Numerik(911);
+  print(numerik.terbilang()); // sembilan ratus sebelas
+}
+```
 
 # Thank you.
 It is really helpful if there are ideas, suggestions, or input for next improvement.
