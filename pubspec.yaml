@@ -1,8 +1,11 @@
 name: format_indonesia
 version: 0.1.0
 description: Library for Indonesian formatting
+repository: https://github.com/mynameismail/format_indonesia
 dependencies:
   intl: ^0.16.1
 dev_dependencies:
   test: ^1.14.7
+environment:
+  sdk: '>=2.0.0 <3.0.0'
   
