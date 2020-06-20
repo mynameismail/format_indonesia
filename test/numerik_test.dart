@@ -2,6 +2,19 @@ import 'package:format_indonesia/format_indonesia.dart';
 import 'package:test/test.dart';
 
 void main() {
+  // Exception: Not accept negative number
+  // test('Terbilang -1', () {
+  //   String terbilang = Numerik(-1).terbilang();
+  //   print(terbilang);
+  //   expect(terbilang, equals(''));
+  // });
+
+  test('Terbilang 0', () {
+    String terbilang = Numerik(0).terbilang();
+    print(terbilang);
+    expect(terbilang, equals('nol'));
+  });
+
   test('Terbilang 1', () {
     String terbilang = Numerik(1).terbilang();
     print(terbilang);
@@ -74,16 +87,10 @@ void main() {
     expect(terbilang, equals('seratus lima belas'));
   });
 
-  test('Terbilang 120', () {
-    String terbilang = Numerik(120).terbilang();
+  test('Terbilang 150', () {
+    String terbilang = Numerik(150).terbilang();
     print(terbilang);
-    expect(terbilang, equals('seratus dua puluh'));
-  });
-
-  test('Terbilang 125', () {
-    String terbilang = Numerik(125).terbilang();
-    print(terbilang);
-    expect(terbilang, equals('seratus dua puluh lima'));
+    expect(terbilang, equals('seratus lima puluh'));
   });
 
   test('Terbilang 500', () {
@@ -92,34 +99,10 @@ void main() {
     expect(terbilang, equals('lima ratus'));
   });
 
-  test('Terbilang 505', () {
-    String terbilang = Numerik(505).terbilang();
+  test('Terbilang 555', () {
+    String terbilang = Numerik(555).terbilang();
     print(terbilang);
-    expect(terbilang, equals('lima ratus lima'));
-  });
-
-  test('Terbilang 510', () {
-    String terbilang = Numerik(510).terbilang();
-    print(terbilang);
-    expect(terbilang, equals('lima ratus sepuluh'));
-  });
-
-  test('Terbilang 515', () {
-    String terbilang = Numerik(515).terbilang();
-    print(terbilang);
-    expect(terbilang, equals('lima ratus lima belas'));
-  });
-
-  test('Terbilang 520', () {
-    String terbilang = Numerik(520).terbilang();
-    print(terbilang);
-    expect(terbilang, equals('lima ratus dua puluh'));
-  });
-
-  test('Terbilang 525', () {
-    String terbilang = Numerik(525).terbilang();
-    print(terbilang);
-    expect(terbilang, equals('lima ratus dua puluh lima'));
+    expect(terbilang, equals('lima ratus lima puluh lima'));
   });
 
   test('Terbilang 911', () {
@@ -128,9 +111,52 @@ void main() {
     expect(terbilang, equals('sembilan ratus sebelas'));
   });
 
-  test('Terbilang 911119', () {
-    String terbilang = Numerik(911119).terbilang();
+  test('Terbilang 1000', () {
+    String terbilang = Numerik(1000).terbilang();
     print(terbilang);
-    expect(terbilang, equals('sembilan ratus sebelas ribu seratus sembilan belas'));
+    expect(terbilang, equals('seribu'));
   });
+
+  test('Terbilang 1101', () {
+    String terbilang = Numerik(1101).terbilang();
+    print(terbilang);
+    expect(terbilang, equals('seribu seratus satu'));
+  });
+
+  test('Terbilang 111.010', () {
+    String terbilang = Numerik(111010).terbilang();
+    print(terbilang);
+    expect(terbilang, equals('seratus sebelas ribu sepuluh'));
+  });
+
+  test('Terbilang 1.050.005', () {
+    String terbilang = Numerik(1050005).terbilang();
+    print(terbilang);
+    expect(terbilang, equals('satu juta lima puluh ribu lima'));
+  });
+
+  test('Terbilang 501.501.501', () {
+    String terbilang = Numerik(501501501).terbilang();
+    print(terbilang);
+    expect(terbilang, equals('lima ratus satu juta lima ratus satu ribu lima ratus satu'));
+  });
+
+  test('Terbilang 100.115.100.115', () {
+    String terbilang = Numerik(100115100115).terbilang();
+    print(terbilang);
+    expect(terbilang, equals('seratus milyar seratus lima belas juta seratus ribu seratus lima belas'));
+  });
+
+  test('Terbilang 510.000.510.000.510', () {
+    String terbilang = Numerik(510000510000510).terbilang();
+    print(terbilang);
+    expect(terbilang, equals('lima ratus sepuluh triliun lima ratus sepuluh juta lima ratus sepuluh'));
+  });
+
+  // Exception: Out of limit convertion
+  // test('Terbilang 150.051.150.051.150.051', () {
+  //   String terbilang = Numerik(150051150051150051).terbilang();
+  //   print(terbilang);
+  //   expect(terbilang, equals(''));
+  // });
 }
