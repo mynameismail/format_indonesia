@@ -86,11 +86,33 @@ class Numerik {
       if (modseribu > 0) result = '$result ${_doTerbilang(modseribu)}';
       return result;
     }
+    if (number < 1000000000) {
+      int divjuta = number ~/ 1000000;
+      int modjuta = number % 1000000;
+      String result = '${_doTerbilang(divjuta)} juta';
+      if (modjuta > 0) result = '$result ${_doTerbilang(modjuta)}';
+      return result;
+    }
+    if (number < 1000000000000) {
+      int divm = number ~/ 1000000000;
+      int modm = number % 1000000000;
+      String result = '${_doTerbilang(divm)} milyar';
+      if (modm > 0) result = '$result ${_doTerbilang(modm)}';
+      return result;
+    }
+    if (number < 1000000000000000) {
+      int divt = number ~/ 1000000000000;
+      int modt = number % 1000000000000;
+      String result = '${_doTerbilang(divt)} triliun';
+      if (modt > 0) result = '$result ${_doTerbilang(modt)}';
+      return result;
+    }
     return '';
   }
 
   String terbilang() {
-    if (this.number < 0) throw Exception('Not accepting a negative number');
+    if (this.number < 0) throw Exception('Not accept negative number');
+    if (this.number >= 1000000000000000) throw Exception('Out of limit convertion');
     if (this.number == 0) return 'nol';
     return _doTerbilang(this.number);
   }
